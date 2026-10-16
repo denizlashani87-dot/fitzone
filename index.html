@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="FitZone - باشگاه تناسب اندام و بدنسازی">
+    <title>FitZone | باشگاه تناسب اندام</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- نوار بالای سایت -->
+    <div class="topbar">
+        <span data-fa="با ما قوی‌تر شو؛ جلسه مشاوره اولیه رایگان!"
+              data-en="Get stronger with us — your first consultation is free!">
+            با ما قوی‌تر شو؛ جلسه مشاوره اولیه رایگان!
+        </span>
+    </div>
+
+    <!-- هدر و منو -->
+    <header class="header">
+        <a href="#home" class="logo">
+            <span class="logo-icon">✳</span>
+            <span>FIT<span class="green">ZONE</span></span>
+        </a>
+
+        <button class="menu-btn" id="menuBtn" aria-label="باز کردن منو">☰</button>
+
+        <nav id="nav">
+            <a href="#home" data-fa="خانه" data-en="Home">خانه</a>
+            <a href="#about" data-fa="درباره ما" data-en="About">درباره ما</a>
+            <a href="#programs" data-fa="برنامه‌ها" data-en="Programs">برنامه‌ها</a>
+            <a href="#trainers" data-fa="مربیان" data-en="Trainers">مربیان</a>
+            <a href="#pricing" data-fa="تعرفه‌ها" data-en="Pricing">تعرفه‌ها</a>
+            <a href="#contact" data-fa="تماس با ما" data-en="Contact">تماس با ما</a>
+        </nav>
+
+        <div class="header-actions">
+            <button id="langBtn" class="lang-btn">EN</button>
+            <a href="#contact" class="btn small"
+               data-fa="عضویت" data-en="Join Now">عضویت</a>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- بنر اصلی -->
+        <section class="hero" id="home">
+            <div class="hero-content">
+                <p class="eyebrow"
+                   data-fa="باشگاه نسل جدید"
+                   data-en="THE NEXT-GEN FITNESS CLUB">
+                    باشگاه نسل جدید
+                </p>
+
+                <h1 data-fa="قوی‌تر از<br><span>دیروز</span> باش."
+                    data-en="BECOME<br><span>STRONGER</span><br>THAN YESTERDAY.">
+                    قوی‌تر از<br><span>دیروز</span> باش.
+                </h1>
+
+                <p class="hero-text"
+                   data-fa="با مربیان حرفه‌ای، تجهیزات مدرن و برنامه‌ای متناسب با هدف تو، به نسخه بهتر خودت تبدیل شو."
+                   data-en="Train with expert coaches, modern equipment, and a plan built around your goals. Become your best self.">
+                    با مربیان حرفه‌ای، تجهیزات مدرن و برنامه‌ای متناسب با هدف تو، به نسخه بهتر خودت تبدیل شو.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#pricing" class="btn"
+                       data-fa="شروع مسیر من ←"
+                       data-en="START MY JOURNEY →">شروع مسیر من ←</a>
+
+                    <a href="#programs" class="text-link"
+                       data-fa="مشاهده برنامه‌ها ↓"
+                       data-en="EXPLORE PROGRAMS ↓">مشاهده برنامه‌ها ↓</a>
+                </div>
+
+                <div class="stats">
+                    <div>
+                        <strong>1200+</strong>
+                        <span data-fa="عضو فعال" data-en="Active Members">عضو فعال</span>
+                    </div>
+                    <div>
+                        <strong>18</strong>
+                        <span data-fa="مربی متخصص" data-en="Expert Trainers">مربی متخصص</span>
+                    </div>
+                    <div>
+                        <strong>4.9/5</strong>
+                        <span data-fa="رضایت اعضا" data-en="Member Rating">رضایت اعضا</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- درباره باشگاه -->
+        <section class="section" id="about">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=85"
+                         alt="فضای مدرن باشگاه بدنسازی">
+                    <div class="image-label"
+                         data-fa="تعهد به پیشرفت ✳"
+                         data-en="COMMITTED TO PROGRESS ✳">
+                        تعهد به پیشرفت ✳
+                    </div>
+                </div>
+
+                <div class="about-content">
+                    <p class="section-label"
+                       data-fa="درباره FITZONE"
+                       data-en="ABOUT FITZONE">درباره FITZONE</p>
+
+                    <h2 data-fa="فقط باشگاه نیست؛<br><span>سبک زندگی توست.</span>"
+                        data-en="MORE THAN A GYM.<br><span>IT'S YOUR LIFESTYLE.</span>">
+                        فقط باشگاه نیست؛<br><span>سبک زندگی توست.</span>
+                    </h2>
+
+                    <p class="muted"
+                       data-fa="ما به تو کمک می‌کنیم با برنامه‌ریزی درست، تمرین اصولی و همراهی مربیان حرفه‌ای به اهداف تناسب اندامت برسی."
+                       data-en="We help you reach your fitness goals through smart planning, effective training, and expert coaching.">
+                        ما به تو کمک می‌کنیم با برنامه‌ریزی درست، تمرین اصولی و همراهی مربیان حرفه‌ای به اهداف تناسب اندامت برسی.
+                    </p>
+
+                    <ul class="features">
+                        <li data-fa="برنامه تمرینی اختصاصی" data-en="Personalized training plans">برنامه تمرینی اختصاصی</li>
+                        <li data-fa="تجهیزات مدرن و استاندارد" data-en="Modern fitness equipment">تجهیزات مدرن و استاندارد</li>
+                        <li data-fa="پشتیبانی مربی و پیگیری پیشرفت" data-en="Expert coaching and progress tracking">پشتیبانی مربی و پیگیری پیشرفت</li>
+                    </ul>
+
+                    <a href="#programs" class="text-link"
+                       data-fa="برنامه‌های ما را ببین ←"
+                       data-en="EXPLORE OUR PROGRAMS →">برنامه‌های ما را ببین ←</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- برنامه‌های ورزشی -->
+        <section class="section programs" id="programs">
+            <div class="section-heading">
+                <div>
+                    <p class="section-label"
+                       data-fa="مسیرت را انتخاب کن"
+                       data-en="FIND YOUR FIT">مسیرت را انتخاب کن</p>
+                    <h2 data-fa="برنامه‌های <span>تمرینی</span>"
+                        data-en="OUR <span>PROGRAMS</span>">برنامه‌های <span>تمرینی</span></h2>
+                </div>
+
+                <p class="muted"
+                   data-fa="برای هر هدف، یک مسیر مناسب داریم."
+                   data-en="Whatever your goal, there's a program for you.">
+                    برای هر هدف، یک مسیر مناسب داریم.
+                </p>
+            </div>
+
+            <div class="program-grid">
+                <article class="program-card">
+                    <img src="https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=800&q=85"
+                         alt="تمرین قدرتی و وزنه">
+                    <div class="program-info">
+                        <small>01 / STRENGTH</small>
+                        <h3 data-fa="قدرت و عضله‌سازی" data-en="Strength & Muscle">قدرت و عضله‌سازی</h3>
+                        <p data-fa="افزایش قدرت و ساخت عضلات با برنامه اصولی."
+                           data-en="Build strength and muscle with a structured plan.">
+                            افزایش قدرت و ساخت عضلات با برنامه اصولی.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="program-card">
+                    <img src="https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=800&q=85"
+                         alt="تمرینات هوازی و آمادگی جسمانی">
+                    <div class="program-info">
+                        <small>02 / CARDIO</small>
+                        <h3 data-fa="هوازی و استقامت" data-en="Cardio & Endurance">هوازی و استقامت</h3>
+                        <p data-fa="بهبود استقامت، تحرک و آمادگی جسمانی."
+                           data-en="Improve endurance, movement, and fitness.">
+                            بهبود استقامت، تحرک و آمادگی جسمانی.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="program-card">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&w=800&q=85"
+                         alt="یوگا و تمرین انعطاف‌پذیری">
+                    <div class="program-info">
+                        <small>03 / MOBILITY</small>
+                        <h3 data-fa="یوگا و انعطاف" data-en="Yoga & Mobility">یوگا و انعطاف</h3>
+                        <p data-fa="تعادل بهتر، انعطاف بیشتر و آرامش ذهن."
+                           data-en="Improve flexibility, balance, and mental focus.">
+                            تعادل بهتر، انعطاف بیشتر و آرامش ذهن.
+                        </p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- بخش انگیزشی -->
+        <section class="motivation">
+            <div class="motivation-content">
+                <p class="section-label"
+                   data-fa="هر روز یک قدم جلوتر"
+                   data-en="ONE STEP FORWARD EVERY DAY">هر روز یک قدم جلوتر</p>
+
+                <h2 data-fa="بهانه‌ها را کنار بگذار.<br><span>شروع کن!</span>"
+                    data-en="LEAVE EXCUSES BEHIND.<br><span>START NOW!</span>">
+                    بهانه‌ها را کنار بگذار.<br><span>شروع کن!</span>
+                </h2>
+
+                <p data-fa="قرار نیست از روز اول عالی باشی؛ فقط کافی است شروع کنی و ادامه بدهی."
+                   data-en="You don't need to be perfect from day one. Just start, and keep going.">
+                    قرار نیست از روز اول عالی باشی؛ فقط کافی است شروع کنی و ادامه بدهی.
+                </p>
+
+                <a href="#contact" class="btn"
+                   data-fa="جلسه مشاوره رایگان"
+                   data-en="FREE CONSULTATION">جلسه مشاوره رایگان</a>
+            </div>
+        </section>
+
+        <!-- مربیان -->
+        <section class="section" id="trainers">
+            <div class="section-heading">
+                <div>
+                    <p class="section-label" data-fa="تیم حرفه‌ای" data-en="OUR TEAM">تیم حرفه‌ای</p>
+                    <h2 data-fa="مربیان <span>ما</span>" data-en="MEET OUR <span>TRAINERS</span>">مربیان <span>ما</span></h2>
+                </div>
+                <p class="muted"
+                   data-fa="با راهنمایی مربیان، هوشمندانه‌تر تمرین کن."
+                   data-en="Train smarter with guidance from experienced coaches.">
+                    با راهنمایی مربیان، هوشمندانه‌تر تمرین کن.
+                </p>
+            </div>
+
+            <div class="trainer-grid">
+                <article class="trainer-card">
+                    <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=85"
+                         alt="مربی قدرت و بدنسازی">
+                    <div>
+                        <small data-fa="مربی قدرت" data-en="STRENGTH COACH">مربی قدرت</small>
+                        <h3>Alex Morgan</h3>
+                        <p data-fa="۸ سال تجربه" data-en="8 years of experience">۸ سال تجربه</p>
+                    </div>
+                </article>
+
+                <article class="trainer-card">
+                    <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=85"
+                         alt="مربی تناسب اندام">
+                    <div>
+                        <small data-fa="مربی تناسب اندام" data-en="FITNESS COACH">مربی تناسب اندام</small>
+                        <h3>Sara Williams</h3>
+                        <p data-fa="۶ سال تجربه" data-en="6 years of experience">۶ سال تجربه</p>
+                    </div>
+                </article>
+
+                <article class="trainer-card">
+                    <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=85"
+                         alt="مربی تمرینات عملکردی">
+                    <div>
+                        <small data-fa="تمرینات عملکردی" data-en="FUNCTIONAL TRAINING">تمرینات عملکردی</small>
+                        <h3>Daniel Reed</h3>
+                        <p data-fa="۱۰ سال تجربه" data-en="10 years of experience">۱۰ سال تجربه</p>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- تعرفه‌ها -->
+        <section class="section pricing" id="pricing">
+            <div class="section-heading">
+                <div>
+                    <p class="section-label" data-fa="پلن‌های عضویت" data-en="MEMBERSHIPS">پلن‌های عضویت</p>
+                    <h2 data-fa="پلن مناسب <span>تو</span>" data-en="CHOOSE YOUR <span>PLAN</span>">پلن مناسب <span>تو</span></h2>
+                </div>
+                <p class="muted"
+                   data-fa="قیمت‌ها را با تعرفه واقعی باشگاه خودت جایگزین کن."
+                   data-en="Replace these placeholders with your actual gym prices.">
+                    قیمت‌ها را با تعرفه واقعی باشگاه خودت جایگزین کن.
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+                <article class="price-card">
+                    <p class="plan-type" data-fa="برای شروع" data-en="STARTER">برای شروع</p>
+                    <h3 data-fa="پایه" data-en="Basic">پایه</h3>
+                    <div class="price">— <small data-fa="قیمت را وارد کنید" data-en="Add price">قیمت را وارد کنید</small></div>
+                    <ul>
+                        <li data-fa="دسترسی به سالن" data-en="Gym access">دسترسی به سالن</li>
+                        <li data-fa="ارزیابی اولیه" data-en="Initial assessment">ارزیابی اولیه</li>
+                        <li data-fa="استفاده از رختکن" data-en="Locker room access">استفاده از رختکن</li>
+                    </ul>
+                    <a href="#contact" class="btn outline" data-fa="انتخاب پلن" data-en="Choose Plan">انتخاب پلن</a>
+                </article>
+
+                <article class="price-card featured">
+                    <div class="popular" data-fa="پیشنهاد ویژه" data-en="POPULAR">پیشنهاد ویژه</div>
+                    <p class="plan-type" data-fa="برای پیشرفت" data-en="FOR PROGRESS">برای پیشرفت</p>
+                    <h3 data-fa="پلاس" data-en="Plus">پلاس</h3>
+                    <div class="price">— <small data-fa="قیمت را وارد کنید" data-en="Add price">قیمت را وارد کنید</small></div>
+                    <ul>
+                        <li data-fa="تمام امکانات پایه" data-en="Everything in Basic">تمام امکانات پایه</li>
+                        <li data-fa="کلاس‌های گروهی" data-en="Group classes">کلاس‌های گروهی</li>
+                        <li data-fa="پیگیری ماهانه پیشرفت" data-en="Monthly progress review">پیگیری ماهانه پیشرفت</li>
+                    </ul>
+                    <a href="#contact" class="btn" data-fa="انتخاب پلن" data-en="Choose Plan">انتخاب پلن</a>
+                </article>
+
+                <article class="price-card">
+                    <p class="plan-type" data-fa="برای اهداف جدی" data-en="ADVANCED">برای اهداف جدی</p>
+                    <h3 data-fa="پرو" data-en="Pro">پرو</h3>
+                    <div class="price">— <small data-fa="قیمت را وارد کنید" data-en="Add price">قیمت را وارد کنید</small></div>
+                    <ul>
+                        <li data-fa="تمام امکانات پلاس" data-en="Everything in Plus">تمام امکانات پلاس</li>
+                        <li data-fa="تمرین خصوصی با مربی" data-en="Personal training">تمرین خصوصی با مربی</li>
+                        <li data-fa="برنامه شخصی‌سازی‌شده" data-en="Personalized plan">برنامه شخصی‌سازی‌شده</li>
+                    </ul>
+                    <a href="#contact" class="btn outline" data-fa="انتخاب پلن" data-en="Choose Plan">انتخاب پلن</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- نظرات مشتریان -->
+        <section class="testimonial">
+            <div class="testimonial-inner">
+                <p class="section-label" data-fa="نظر اعضای ما" data-en="MEMBER STORIES">نظر اعضای ما</p>
+                <blockquote
+                    data-fa="«از وقتی تمرین را شروع کردم، انرژی بیشتری دارم و هر هفته پیشرفتم را احساس می‌کنم.»"
+                    data-en="“Since I started training, I have more energy and can feel my progress every week.”">
+                    «از وقتی تمرین را شروع کردم، انرژی بیشتری دارم و هر هفته پیشرفتم را احساس می‌کنم.»
+                </blockquote>
+                <strong>Alex R.</strong>
+                <small data-fa="نظر نمونه؛ با نظر واقعی مشتری جایگزین شود."
+                       data-en="Sample testimonial — replace with a real customer review.">
+                    نظر نمونه؛ با نظر واقعی مشتری جایگزین شود.
+                </small>
+            </div>
+        </section>
+
+        <!-- تماس با ما -->
+        <section class="section contact" id="contact">
+            <div class="contact-grid">
+                <div>
+                    <p class="section-label" data-fa="با ما در ارتباط باش" data-en="GET IN TOUCH">با ما در ارتباط باش</p>
+
+                    <h2 data-fa="آماده‌ای<br><span>شروع کنی؟</span>"
+                        data-en="READY TO<br><span>GET STARTED?</span>">
+                        آماده‌ای<br><span>شروع کنی؟</span>
+                    </h2>
+
+                    <p class="muted"
+                       data-fa="فرم را تکمیل کن تا برای مشاوره و انتخاب برنامه مناسب با تو تماس بگیریم."
+                       data-en="Fill out the form and we'll contact you to help find the right program.">
+                        فرم را تکمیل کن تا برای مشاوره و انتخاب برنامه مناسب با تو تماس بگیریم.
+                    </p>
+
+                    <div class="contact-detail">
+                        <span>☎</span>
+                        <div>
+                            <small data-fa="شماره تماس" data-en="PHONE">شماره تماس</small>
+                            <strong dir="ltr">+98 21 1234 5678</strong>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <span>✉</span>
+                        <div>
+                            <small data-fa="ایمیل" data-en="EMAIL">ایمیل</small>
+                            <strong dir="ltr">hello@fitzone.example</strong>
+                        </div>
+                    </div>
+
+                    <div class="contact-detail">
+                        <span>⌖</span>
+                        <div>
+                            <small data-fa="آدرس" data-en="ADDRESS">آدرس</small>
+                            <strong data-fa="آدرس واقعی باشگاه را وارد کن"
+                                    data-en="Add your real gym address">
+                                آدرس واقعی باشگاه را وارد کن
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+
+                <form class="contact-form" id="contactForm">
+                    <h3 data-fa="درخواست مشاوره" data-en="REQUEST A CONSULTATION">درخواست مشاوره</h3>
+
+                    <label for="name" data-fa="نام و نام خانوادگی" data-en="Full Name">نام و نام خانوادگی</label>
+                    <input type="text" id="name" name="name" required
+                           placeholder="نام خود را وارد کن"
+                           data-placeholder-fa="نام خود را وارد کن"
+                           data-placeholder-en="Enter your name">
+
+                    <label for="email" data-fa="ایمیل یا شماره تماس" data-en="Email or Phone">ایمیل یا شماره تماس</label>
+                    <input type="text" id="email" name="email" required
+                           placeholder="راه ارتباطی"
+                           data-placeholder-fa="راه ارتباطی"
+                           data-placeholder-en="Your contact details">
+
+                    <label for="interest" data-fa="برنامه مورد علاقه" data-en="Program of Interest">برنامه مورد علاقه</label>
+                    <select id="interest" name="interest">
+                        <option data-fa="قدرت و عضله‌سازی" data-en="Strength & Muscle">قدرت و عضله‌سازی</option>
+                        <option data-fa="هوازی و استقامت" data-en="Cardio & Endurance">هوازی و استقامت</option>
+                        <option data-fa="یوگا و انعطاف" data-en="Yoga & Mobility">یوگا و انعطاف</option>
+                        <option data-fa="مربی خصوصی" data-en="Personal Training">مربی خصوصی</option>
+                    </select>
+
+                    <label for="message" data-fa="پیام شما" data-en="Your Message">پیام شما</label>
+                    <textarea id="message" name="message" rows="4"
+                              placeholder="هدفت را برای ما بنویس..."
+                              data-placeholder-fa="هدفت را برای ما بنویس..."
+                              data-placeholder-en="Tell us about your goals..."></textarea>
+
+                    <button type="submit" class="btn submit"
+                            data-fa="ارسال درخواست ←"
+                            data-en="SEND REQUEST →">ارسال درخواست ←</button>
+
+                    <p id="formMessage" class="form-message" role="status"></p>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- فوتر -->
+    <footer class="footer">
+        <div class="footer-top">
+            <a href="#home" class="logo">
+                <span class="logo-icon">✳</span>
+                <span>FIT<span class="green">ZONE</span></span>
+            </a>
+
+            <p data-fa="قوی‌تر، سالم‌تر، باانگیزه‌تر."
+               data-en="Stronger. Healthier. Happier.">
+                قوی‌تر، سالم‌تر، باانگیزه‌تر.
+            </p>
+
+            <div class="social-links">
+                <a href="https://www.instagram.com/" aria-label="Instagram">IG</a>
+                <a href="https://www.linkedin.com/" aria-label="LinkedIn">in</a>
+                <a href="https://www.youtube.com/" aria-label="YouTube">YT</a>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> FitZone — <span data-fa="تمام حقوق محفوظ است." data-en="All rights reserved.">تمام حقوق محفوظ است.</span></p>
+            <a href="#home" data-fa="بازگشت به بالا ↑" data-en="Back to top ↑">بازگشت به بالا ↑</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
