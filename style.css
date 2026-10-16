@@ -1,0 +1,935 @@
+/* تنظیمات عمومی */
+:root {
+    --green: #c6fa52;
+    --dark: #10130f;
+    --light: #f5f7f1;
+    --muted: #777e72;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background: var(--light);
+    color: #171a15;
+    font-family: "Vazirmatn", Tahoma, sans-serif;
+    line-height: 1.9;
+}
+
+body.en {
+    font-family: Arial, sans-serif;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+}
+
+.green,
+.hero h1 span,
+.about-content h2 span,
+.section-heading h2 span,
+.motivation h2 span,
+.contact h2 span {
+    color: var(--green);
+}
+
+.section {
+    padding: 90px max(22px, calc((100% - 1160px) / 2));
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 14px;
+}
+
+/* نوار بالای سایت */
+.topbar {
+    background: var(--green);
+    color: var(--dark);
+    text-align: center;
+    padding: 8px 15px;
+    font-size: 12px;
+    font-weight: 800;
+}
+
+/* هدر و لوگو */
+.header {
+    min-height: 78px;
+    background: var(--dark);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 22px;
+    padding: 12px max(22px, calc((100% - 1160px) / 2));
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-bottom: 1px solid #30352c;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-family: Arial, sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+    direction: ltr;
+    white-space: nowrap;
+}
+
+.logo-icon {
+    width: 37px;
+    height: 37px;
+    border: 2px solid var(--green);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: var(--green);
+    font-size: 26px;
+}
+
+.header nav {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.header nav a {
+    color: #d4d8d0;
+    font-size: 12px;
+    transition: color 0.2s;
+}
+
+.header nav a:hover {
+    color: var(--green);
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.lang-btn {
+    background: transparent;
+    color: var(--green);
+    border: 1px solid #66754f;
+    border-radius: 25px;
+    padding: 7px 13px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.menu-btn {
+    display: none;
+    color: white;
+    background: transparent;
+    border: none;
+    font-size: 27px;
+}
+
+/* دکمه‌ها */
+.btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--green);
+    color: #11150c;
+    padding: 13px 23px;
+    border: 1px solid var(--green);
+    font-size: 12px;
+    font-weight: 900;
+    transition: 0.25s;
+}
+
+.btn:hover {
+    background: #ddff9a;
+    transform: translateY(-2px);
+}
+
+.btn.small {
+    padding: 9px 15px;
+}
+
+.btn.outline {
+    background: transparent;
+    border-color: #b8c4a7;
+}
+
+.text-link {
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 800;
+    border-bottom: 1px solid #9bbd60;
+    padding-bottom: 5px;
+}
+
+/* بنر اصلی */
+.hero {
+    min-height: 680px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding: 70px max(22px, calc((100% - 1160px) / 2));
+    background:
+        linear-gradient(270deg, #090c08ed 0%, #090c08a8 55%, #090c0840 100%),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=90")
+        center / cover no-repeat;
+}
+
+html[dir="ltr"] .hero {
+    background:
+        linear-gradient(90deg, #090c08ed 0%, #090c08a8 55%, #090c0840 100%),
+        url("https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=2000&q=90")
+        center / cover no-repeat;
+}
+
+.hero-content {
+    max-width: 680px;
+}
+
+.eyebrow,
+.section-label {
+    color: #789b37;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    margin-bottom: 18px;
+}
+
+.hero .eyebrow {
+    color: var(--green);
+}
+
+.hero h1 {
+    font-size: clamp(48px, 7vw, 82px);
+    font-weight: 900;
+    line-height: 1.25;
+    margin-bottom: 20px;
+}
+
+.hero-text {
+    max-width: 480px;
+    color: #c6ccc0;
+    font-size: 14px;
+    margin-bottom: 28px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.hero .text-link {
+    color: white;
+}
+
+.stats {
+    display: flex;
+    gap: 38px;
+    margin-top: 50px;
+}
+
+.stats div {
+    display: flex;
+    flex-direction: column;
+}
+
+.stats strong {
+    font: 900 25px Arial, sans-serif;
+    direction: ltr;
+}
+
+.stats span {
+    color: #b8c0b2;
+    font-size: 11px;
+}
+
+/* درباره باشگاه */
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 70px;
+}
+
+.about-image {
+    position: relative;
+    padding: 0 0 22px 22px;
+}
+
+.about-image::before {
+    content: "";
+    position: absolute;
+    width: 65%;
+    height: 70%;
+    bottom: 0;
+    left: 0;
+    border: 1px solid #91b84d;
+}
+
+.about-image img {
+    height: 450px;
+    position: relative;
+}
+
+.image-label {
+    position: absolute;
+    bottom: 40px;
+    right: -12px;
+    background: var(--green);
+    padding: 10px 18px;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.about-content h2,
+.section-heading h2,
+.contact h2 {
+    font-size: clamp(32px, 4vw, 48px);
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.about-content h2 span,
+.section-heading h2 span,
+.contact h2 span {
+    color: #789b37;
+}
+
+.features {
+    list-style: none;
+    margin: 25px 0;
+    display: grid;
+    gap: 12px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.features li::before {
+    content: "✓";
+    color: #5f8428;
+    background: #e4f0d4;
+    padding: 3px 7px;
+    border-radius: 50%;
+    margin-inline-end: 10px;
+}
+
+/* عنوان بخش‌ها */
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 30px;
+    margin-bottom: 38px;
+}
+
+.section-heading h2 {
+    margin-bottom: 0;
+}
+
+.section-heading > p {
+    max-width: 350px;
+}
+
+/* کارت‌های برنامه ورزشی */
+.programs {
+    background: #e9ede4;
+}
+
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.program-card {
+    position: relative;
+    height: 410px;
+    overflow: hidden;
+    background: #171a15;
+    color: white;
+}
+
+.program-card img {
+    height: 100%;
+    transition: transform 0.4s;
+    opacity: 0.8;
+}
+
+.program-card:hover img {
+    transform: scale(1.06);
+}
+
+.program-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(0deg, #080a08 0%, #080a0860 50%, transparent);
+}
+
+.program-info {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    padding: 24px;
+}
+
+.program-info small {
+    color: var(--green);
+    font: bold 10px Arial, sans-serif;
+}
+
+.program-info h3 {
+    font-size: 21px;
+    margin: 8px 0;
+}
+
+.program-info p {
+    color: #c5cbbf;
+    font-size: 12px;
+}
+
+/* بخش انگیزشی */
+.motivation {
+    padding: 90px max(22px, calc((100% - 1160px) / 2));
+    color: white;
+    background:
+        linear-gradient(90deg, #10130fee, #10130fa8),
+        url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+}
+
+html[dir="rtl"] .motivation {
+    background:
+        linear-gradient(270deg, #10130fee, #10130fa8),
+        url("https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?auto=format&fit=crop&w=1800&q=85")
+        center / cover no-repeat;
+}
+
+.motivation h2 {
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 1.4;
+    margin-bottom: 18px;
+}
+
+.motivation p:not(.section-label) {
+    color: #c6ccc0;
+    font-size: 14px;
+    max-width: 520px;
+    margin-bottom: 25px;
+}
+
+.motivation h2 span {
+    color: var(--green);
+}
+
+/* کارت‌های مربیان */
+.trainer-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.trainer-card {
+    background: white;
+    overflow: hidden;
+}
+
+.trainer-card img {
+    height: 320px;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.trainer-card:hover img {
+    filter: grayscale(0);
+}
+
+.trainer-card > div {
+    padding: 20px;
+}
+
+.trainer-card small {
+    color: #789b37;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.trainer-card h3 {
+    font: bold 21px Arial, sans-serif;
+    margin: 7px 0;
+}
+
+.trainer-card p {
+    font-size: 12px;
+    color: var(--muted);
+}
+
+/* تعرفه‌ها */
+.pricing {
+    background: #ecefe7;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch;
+    gap: 20px;
+}
+
+.price-card {
+    background: white;
+    padding: 30px 25px;
+    border: 1px solid #e0e5d9;
+    position: relative;
+}
+
+.price-card.featured {
+    background: var(--dark);
+    color: white;
+    border-color: var(--dark);
+}
+
+.popular {
+    background: var(--green);
+    color: var(--dark);
+    text-align: center;
+    padding: 5px;
+    font-size: 10px;
+    font-weight: 900;
+    margin: -30px -25px 22px;
+}
+
+.plan-type {
+    color: #789b37;
+    font-size: 11px;
+    font-weight: 900;
+}
+
+.price-card h3 {
+    font-size: 27px;
+    margin: 5px 0 15px;
+}
+
+.price {
+    color: #789b37;
+    font-size: 32px;
+    font-weight: 900;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #e2e6dc;
+}
+
+.price small {
+    display: inline-block;
+    color: #888f82;
+    font-size: 10px;
+    font-weight: 400;
+}
+
+.price-card ul {
+    list-style: none;
+    display: grid;
+    gap: 13px;
+    margin: 23px 0;
+    font-size: 12px;
+}
+
+.price-card li::before {
+    content: "✓";
+    color: #789b37;
+    margin-inline-end: 9px;
+}
+
+.price-card .btn {
+    width: 100%;
+}
+
+/* نظرات مشتریان */
+.testimonial {
+    background: #dfe8d2;
+    padding: 75px 22px;
+    text-align: center;
+}
+
+.testimonial-inner {
+    max-width: 760px;
+    margin: auto;
+}
+
+.testimonial blockquote {
+    font-size: clamp(20px, 3vw, 28px);
+    font-weight: 700;
+    line-height: 2;
+    margin: 20px 0;
+}
+
+.testimonial strong,
+.testimonial small {
+    display: block;
+}
+
+.testimonial small {
+    font-size: 10px;
+    color: #737b6b;
+    margin-top: 10px;
+}
+
+/* بخش تماس */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 70px;
+}
+
+.contact h2 {
+    font-size: clamp(42px, 5vw, 62px);
+}
+
+.contact-detail {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.contact-detail > span {
+    display: grid;
+    place-items: center;
+    background: #e4efd5;
+    color: #5f8428;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+}
+
+.contact-detail small,
+.contact-detail strong {
+    display: block;
+}
+
+.contact-detail small {
+    font-size: 10px;
+    color: var(--muted);
+}
+
+.contact-detail strong {
+    font-size: 13px;
+    direction: ltr;
+    text-align: start;
+}
+
+.contact-form {
+    background: white;
+    border: 1px solid #e0e5d9;
+    padding: 30px;
+}
+
+.contact-form h3 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    font-size: 12px;
+    font-weight: 800;
+    margin: 16px 0 6px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #dfe4d8;
+    background: #f7f8f4;
+    outline: none;
+    font-size: 13px;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    border-color: #8daf4c;
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+.submit {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.form-message {
+    color: #5d812a;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+/* فوتر */
+.footer {
+    background: var(--dark);
+    color: white;
+    padding: 32px max(22px, calc((100% - 1160px) / 2)) 18px;
+}
+
+.footer-top,
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-top {
+    padding-bottom: 25px;
+}
+
+.footer-top p {
+    color: #b6bdb0;
+    font-size: 12px;
+}
+
+.social-links {
+    display: flex;
+    gap: 9px;
+}
+
+.social-links a {
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    color: var(--green);
+    border: 1px solid #454b3e;
+    font: bold 11px Arial, sans-serif;
+}
+
+.footer-bottom {
+    border-top: 1px solid #30352c;
+    padding-top: 15px;
+    font-size: 10px;
+    color: #a4ac9c;
+}
+
+.footer-bottom a {
+    color: var(--green);
+}
+
+/* نمایش در تبلت */
+@media (max-width: 950px) {
+    .header {
+        gap: 12px;
+    }
+
+    .header nav {
+        gap: 12px;
+    }
+
+    .header nav a {
+        font-size: 11px;
+    }
+
+    .section {
+        padding: 70px 25px;
+    }
+
+    .about-grid,
+    .contact-grid {
+        gap: 35px;
+    }
+
+    .program-card {
+        height: 360px;
+    }
+}
+
+/* نمایش در موبایل */
+@media (max-width: 700px) {
+    .header {
+        min-height: 70px;
+        padding: 10px 17px;
+    }
+
+    .menu-btn {
+        display: block;
+        order: 3;
+    }
+
+    .header nav {
+        display: none;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: var(--dark);
+        padding: 15px 20px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+
+    html[dir="ltr"] .header nav {
+        right: 0;
+        left: 0;
+    }
+
+    .header nav.open {
+        display: flex;
+    }
+
+    .header nav a {
+        padding: 12px 5px;
+        border-bottom: 1px solid #ffffff15;
+        font-size: 13px;
+    }
+
+    .header-actions {
+        margin-inline-start: auto;
+    }
+
+    .header-actions .btn {
+        display: none;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .logo-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .hero {
+        min-height: 620px;
+        padding: 55px 22px;
+        background-position: center;
+    }
+
+    .hero h1 {
+        font-size: 49px;
+    }
+
+    .hero-text {
+        font-size: 13px;
+    }
+
+    .stats {
+        gap: 20px;
+        margin-top: 38px;
+    }
+
+    .stats strong {
+        font-size: 20px;
+    }
+
+    .stats span {
+        font-size: 10px;
+    }
+
+    .section {
+        padding: 60px 18px;
+    }
+
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .about-image img {
+        height: 330px;
+    }
+
+    .section-heading {
+        display: block;
+    }
+
+    .section-heading > p {
+        margin-top: 15px;
+    }
+
+    .program-grid,
+    .trainer-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .program-card {
+        height: 380px;
+    }
+
+    .trainer-card img {
+        height: 330px;
+    }
+
+    .motivation {
+        padding: 65px 22px;
+    }
+
+    .motivation h2 {
+        font-size: 40px;
+    }
+
+    .price-card.featured {
+        transform: none;
+    }
+
+    .contact-form {
+        padding: 22px 17px;
+    }
+
+    .footer {
+        padding: 28px 18px 18px;
+    }
+
+    .footer-top {
+        flex-wrap: wrap;
+    }
+
+    .footer-top p {
+        order: 3;
+        width: 100%;
+    }
+
+    .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
