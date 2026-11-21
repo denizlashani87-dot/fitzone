@@ -1,13 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="FitZone - باشگاه تناسب اندام و بدنسازی">
+    <meta name="theme-color" content="#10130f">
     <title>FitZone | باشگاه تناسب اندام</title>
 
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -32,6 +35,9 @@
             <a href="#about" data-fa="درباره ما" data-en="About">درباره ما</a>
             <a href="#programs" data-fa="برنامه‌ها" data-en="Programs">برنامه‌ها</a>
             <a href="#trainers" data-fa="مربیان" data-en="Trainers">مربیان</a>
+            <a href="#nutrition" data-fa="تغذیه" data-en="Nutrition">تغذیه</a>
+            <a href="#calculator" data-fa="محاسبه‌گر" data-en="Calculator">محاسبه‌گر</a>
+            <a href="#dashboard" data-fa="پیشرفت من" data-en="My Progress">پیشرفت من</a>
             <a href="#pricing" data-fa="تعرفه‌ها" data-en="Pricing">تعرفه‌ها</a>
             <a href="#contact" data-fa="تماس با ما" data-en="Contact">تماس با ما</a>
         </nav>
@@ -44,6 +50,8 @@
     </header>
 
     <main>
+
+        <!-- Hero -->
         <section class="hero" id="home">
             <div class="hero-content">
                 <p class="eyebrow"
@@ -88,6 +96,7 @@
             </div>
         </section>
 
+        <!-- About -->
         <section class="section" id="about">
             <div class="about-grid">
                 <div class="about-image">
@@ -125,6 +134,7 @@
             </div>
         </section>
 
+        <!-- Programs -->
         <section class="section programs" id="programs">
             <div class="section-heading">
                 <div>
@@ -167,6 +177,7 @@
             </div>
         </section>
 
+        <!-- Motivation -->
         <section class="motivation">
             <div class="motivation-content">
                 <p class="section-label" data-fa="هر روز یک قدم جلوتر" data-en="ONE STEP FORWARD EVERY DAY">هر روز یک قدم جلوتر</p>
@@ -182,6 +193,7 @@
             </div>
         </section>
 
+        <!-- Trainers -->
         <section class="section" id="trainers">
             <div class="section-heading">
                 <div>
@@ -193,7 +205,7 @@
             </div>
 
             <div class="trainer-grid">
-                <article class="trainer-card">
+                <article class="trainer-card" tabindex="0" role="button" aria-label="مشاهده پروفایل Alex Morgan">
                     <img src="https://images.unsplash.com/photo-1567013127542-490d757e51fc?auto=format&fit=crop&w=700&q=85" alt="مربی قدرت و بدنسازی">
                     <div>
                         <small data-fa="مربی قدرت" data-en="STRENGTH COACH">مربی قدرت</small>
@@ -202,7 +214,7 @@
                     </div>
                 </article>
 
-                <article class="trainer-card">
+                <article class="trainer-card" tabindex="0" role="button" aria-label="مشاهده پروفایل Sara Williams">
                     <img src="https://images.unsplash.com/photo-1594381898411-846e7d193883?auto=format&fit=crop&w=700&q=85" alt="مربی تناسب اندام">
                     <div>
                         <small data-fa="مربی تناسب اندام" data-en="FITNESS COACH">مربی تناسب اندام</small>
@@ -211,7 +223,7 @@
                     </div>
                 </article>
 
-                <article class="trainer-card">
+                <article class="trainer-card" tabindex="0" role="button" aria-label="مشاهده پروفایل Daniel Reed">
                     <img src="https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=700&q=85" alt="مربی تمرینات عملکردی">
                     <div>
                         <small data-fa="تمرینات عملکردی" data-en="FUNCTIONAL TRAINING">تمرینات عملکردی</small>
@@ -222,6 +234,213 @@
             </div>
         </section>
 
+        <!-- Nutrition -->
+        <section class="section nutrition-section" id="nutrition">
+            <div class="section-heading">
+                <div>
+                    <p class="section-label" data-fa="تغذیه هوشمند" data-en="SMART NUTRITION">تغذیه هوشمند</p>
+                    <h2 data-fa="سوخت بدن <span>تو</span>"
+                        data-en="FUEL YOUR <span>BODY</span>">سوخت بدن <span>تو</span></h2>
+                </div>
+                <p class="muted"
+                   data-fa="تمرین خوب بدون تغذیه مناسب کامل نمی‌شود."
+                   data-en="Great training needs great nutrition.">تمرین خوب بدون تغذیه مناسب کامل نمی‌شود.</p>
+            </div>
+
+            <div class="nutrition-grid">
+                <article class="nutrition-card">
+                    <span class="nutrition-icon">🍳</span>
+                    <small>01 / BREAKFAST</small>
+                    <h3 data-fa="صبحانه" data-en="Breakfast">صبحانه</h3>
+                    <p data-fa="تخم‌مرغ، نان سبوس‌دار و میوه"
+                       data-en="Eggs, whole-grain bread and fruit">تخم‌مرغ، نان سبوس‌دار و میوه</p>
+                </article>
+
+                <article class="nutrition-card">
+                    <span class="nutrition-icon">🥗</span>
+                    <small>02 / LUNCH</small>
+                    <h3 data-fa="ناهار" data-en="Lunch">ناهار</h3>
+                    <p data-fa="مرغ گریل‌شده، برنج و سبزیجات"
+                       data-en="Grilled chicken, rice and vegetables">مرغ گریل‌شده، برنج و سبزیجات</p>
+                </article>
+
+                <article class="nutrition-card">
+                    <span class="nutrition-icon">🍎</span>
+                    <small>03 / SNACK</small>
+                    <h3 data-fa="میان‌وعده" data-en="Snack">میان‌وعده</h3>
+                    <p data-fa="ماست، مغزها و میوه تازه"
+                       data-en="Yogurt, nuts and fresh fruit">ماست، مغزها و میوه تازه</p>
+                </article>
+
+                <article class="nutrition-card">
+                    <span class="nutrition-icon">🥑</span>
+                    <small>04 / DINNER</small>
+                    <h3 data-fa="شام" data-en="Dinner">شام</h3>
+                    <p data-fa="سالاد سبزیجات و منبع پروتئین"
+                       data-en="Vegetable salad and a protein source">سالاد سبزیجات و منبع پروتئین</p>
+                </article>
+            </div>
+
+            <p class="nutrition-note"
+               data-fa="این برنامه صرفاً نمونه آموزشی است و رژیم شخصی‌سازی‌شده یا توصیه پزشکی محسوب نمی‌شود."
+               data-en="This is an educational sample, not a personalized diet or medical advice.">
+                این برنامه صرفاً نمونه آموزشی است و رژیم شخصی‌سازی‌شده یا توصیه پزشکی محسوب نمی‌شود.
+            </p>
+        </section>
+
+        <!-- Fitness Calculator -->
+        <section class="section calculator-section" id="calculator">
+            <div class="section-heading">
+                <div>
+                    <p class="section-label" data-fa="بدنت را بشناس" data-en="KNOW YOUR BODY">بدنت را بشناس</p>
+                    <h2 data-fa="محاسبه‌گر <span>تناسب اندام</span>"
+                        data-en="FITNESS <span>CALCULATOR</span>">
+                        محاسبه‌گر <span>تناسب اندام</span>
+                    </h2>
+                </div>
+                <p class="muted"
+                   data-fa="اطلاعاتت را وارد کن و تخمینی از وضعیت بدنت به دست بیاور."
+                   data-en="Enter your details to get an estimate of your fitness metrics.">
+                    اطلاعاتت را وارد کن و تخمینی از وضعیت بدنت به دست بیاور.
+                </p>
+            </div>
+
+            <div class="calculator-box">
+                <form id="fitnessForm" class="fitness-form">
+
+                    <label for="fitnessAge" data-fa="سن" data-en="Age">سن</label>
+                    <input type="number" id="fitnessAge" min="15" max="100"
+                           placeholder="مثلاً 25" required>
+
+                    <label for="fitnessGender" data-fa="جنسیت" data-en="Sex">جنسیت</label>
+                    <select id="fitnessGender" required>
+                        <option value="male" data-fa="مرد" data-en="Male">مرد</option>
+                        <option value="female" data-fa="زن" data-en="Female">زن</option>
+                    </select>
+
+                    <label for="fitnessWeight" data-fa="وزن (کیلوگرم)" data-en="Weight (kg)">وزن (کیلوگرم)</label>
+                    <input type="number" id="fitnessWeight" min="20" max="300"
+                           step="0.1" placeholder="مثلاً 70" required>
+
+                    <label for="fitnessHeight" data-fa="قد (سانتی‌متر)" data-en="Height (cm)">قد (سانتی‌متر)</label>
+                    <input type="number" id="fitnessHeight" min="100" max="250"
+                           placeholder="مثلاً 175" required>
+
+                    <label for="fitnessActivity" data-fa="میزان فعالیت" data-en="Activity Level">میزان فعالیت</label>
+                    <select id="fitnessActivity" required>
+                        <option value="1.2" data-fa="کم‌تحرک" data-en="Sedentary">کم‌تحرک</option>
+                        <option value="1.375" data-fa="فعالیت سبک" data-en="Light activity">فعالیت سبک</option>
+                        <option value="1.55" data-fa="فعالیت متوسط" data-en="Moderate activity">فعالیت متوسط</option>
+                        <option value="1.725" data-fa="فعالیت زیاد" data-en="High activity">فعالیت زیاد</option>
+                    </select>
+
+                    <button type="submit" class="btn submit"
+                            data-fa="محاسبه کن ←"
+                            data-en="CALCULATE →">محاسبه کن ←</button>
+                </form>
+
+                <div id="fitnessResult" class="fitness-result" aria-live="polite">
+                    <span class="result-icon">✳</span>
+                    <h3 data-fa="نتیجه محاسبه" data-en="YOUR RESULTS">نتیجه محاسبه</h3>
+                    <p data-fa="اطلاعاتت را وارد کن تا نتیجه نمایش داده شود."
+                       data-en="Enter your details to see your results.">
+                        اطلاعاتت را وارد کن تا نتیجه نمایش داده شود.
+                    </p>
+                </div>
+            </div>
+
+            <p class="nutrition-note"
+               data-fa="نتایج تقریبی و آموزشی هستند؛ BMI به‌تنهایی معیار تشخیص سلامت نیست و کالری موردنیاز واقعی می‌تواند متفاوت باشد."
+               data-en="Results are estimates. BMI alone does not determine health, and actual calorie needs may vary.">
+                نتایج تقریبی و آموزشی هستند؛ BMI به‌تنهایی معیار تشخیص سلامت نیست و کالری موردنیاز واقعی می‌تواند متفاوت باشد.
+            </p>
+        </section>
+
+        <!-- Progress Dashboard -->
+        <section class="section dashboard-section" id="dashboard">
+            <div class="section-heading">
+                <div>
+                    <p class="section-label" data-fa="مسیر پیشرفت تو" data-en="YOUR FITNESS JOURNEY">مسیر پیشرفت تو</p>
+                    <h2 data-fa="هر روز <span>قوی‌تر</span>"
+                        data-en="GET <span>STRONGER</span>">هر روز <span>قوی‌تر</span></h2>
+                </div>
+                <p class="muted"
+                   data-fa="تغییراتت را ثبت کن و پیشرفتت را دنبال کن."
+                   data-en="Track your changes and follow your progress.">
+                    تغییراتت را ثبت کن و پیشرفتت را دنبال کن.
+                </p>
+            </div>
+
+            <div class="dashboard-box">
+                <form id="progressForm" class="progress-form">
+                    <div>
+                        <label for="progressWeight"
+                               data-fa="وزن فعلی (کیلوگرم)"
+                               data-en="Current Weight (kg)">وزن فعلی (کیلوگرم)</label>
+                        <input type="number" id="progressWeight"
+                               min="20" max="300" step="0.1"
+                               placeholder="مثلاً 72" required>
+                    </div>
+
+                    <div>
+                        <label for="progressGoal"
+                               data-fa="وزن هدف (کیلوگرم)"
+                               data-en="Target Weight (kg)">وزن هدف (کیلوگرم)</label>
+                        <input type="number" id="progressGoal"
+                               min="20" max="300" step="0.1"
+                               placeholder="مثلاً 68" required>
+                    </div>
+
+                    <button type="submit" class="btn"
+                            data-fa="ثبت پیشرفت"
+                            data-en="SAVE PROGRESS">ثبت پیشرفت</button>
+                </form>
+
+                <div class="progress-summary">
+                    <div class="progress-stat">
+                        <small data-fa="آخرین وزن ثبت‌شده"
+                               data-en="Latest Weight">آخرین وزن ثبت‌شده</small>
+                        <strong id="latestWeight">—</strong>
+                    </div>
+
+                    <div class="progress-stat">
+                        <small data-fa="وزن هدف"
+                               data-en="Target Weight">وزن هدف</small>
+                        <strong id="targetWeight">—</strong>
+                    </div>
+
+                    <div class="progress-stat">
+                        <small data-fa="تعداد ثبت‌ها"
+                               data-en="Total Entries">تعداد ثبت‌ها</small>
+                        <strong id="progressCount">0</strong>
+                    </div>
+                </div>
+
+                <div class="progress-chart">
+                    <h3 data-fa="تاریخچه تغییر وزن"
+                        data-en="WEIGHT HISTORY">تاریخچه تغییر وزن</h3>
+
+                    <div id="progressHistory" class="progress-history" aria-live="polite">
+                        <p data-fa="هنوز اطلاعاتی ثبت نشده است."
+                           data-en="No progress has been recorded yet.">
+                            هنوز اطلاعاتی ثبت نشده است.
+                        </p>
+                    </div>
+                </div>
+
+                <button type="button" id="clearProgress" class="btn outline"
+                        data-fa="پاک کردن اطلاعات"
+                        data-en="CLEAR DATA">پاک کردن اطلاعات</button>
+            </div>
+
+            <p class="nutrition-note"
+               data-fa="اطلاعات پیشرفت در مرورگر همین دستگاه ذخیره می‌شوند و داشبورد حساب کاربری واقعی نیست."
+               data-en="Progress is saved locally in this browser; this is not a real user account.">
+                اطلاعات پیشرفت در مرورگر همین دستگاه ذخیره می‌شوند و داشبورد حساب کاربری واقعی نیست.
+            </p>
+        </section>
+
+        <!-- Pricing -->
         <section class="section pricing" id="pricing">
             <div class="section-heading">
                 <div>
@@ -272,6 +491,7 @@
             </div>
         </section>
 
+        <!-- Testimonial -->
         <section class="testimonial">
             <div class="testimonial-inner">
                 <p class="section-label" data-fa="نظر اعضای ما" data-en="MEMBER STORIES">نظر اعضای ما</p>
@@ -288,6 +508,7 @@
             </div>
         </section>
 
+        <!-- Contact -->
         <section class="section contact" id="contact">
             <div class="contact-grid">
                 <div>
@@ -345,10 +566,10 @@
 
                     <label for="interest" data-fa="برنامه مورد علاقه" data-en="Program of Interest">برنامه مورد علاقه</label>
                     <select id="interest" name="interest">
-                        <option data-fa="قدرت و عضله‌سازی" data-en="Strength & Muscle">قدرت و عضله‌سازی</option>
-                        <option data-fa="هوازی و استقامت" data-en="Cardio & Endurance">هوازی و استقامت</option>
-                        <option data-fa="یوگا و انعطاف" data-en="Yoga & Mobility">یوگا و انعطاف</option>
-                        <option data-fa="مربی خصوصی" data-en="Personal Training">مربی خصوصی</option>
+                        <option value="strength" data-fa="قدرت و عضله‌سازی" data-en="Strength & Muscle">قدرت و عضله‌سازی</option>
+                        <option value="cardio" data-fa="هوازی و استقامت" data-en="Cardio & Endurance">هوازی و استقامت</option>
+                        <option value="yoga" data-fa="یوگا و انعطاف" data-en="Yoga & Mobility">یوگا و انعطاف</option>
+                        <option value="personal" data-fa="مربی خصوصی" data-en="Personal Training">مربی خصوصی</option>
                     </select>
 
                     <label for="message" data-fa="پیام شما" data-en="Your Message">پیام شما</label>
@@ -365,7 +586,7 @@
             </div>
         </section>
 
-        <!-- پنجره پروفایل مربی -->
+        <!-- Trainer Profile Modal -->
         <div class="trainer-modal" id="trainerModal" aria-hidden="true">
             <button class="trainer-modal-overlay" id="trainerModalOverlay" type="button" aria-label="Close profile"></button>
 
@@ -393,6 +614,7 @@
                                 <strong id="modalTrainerExperience"></strong>
                             </div>
                         </div>
+
                         <div class="trainer-detail-item">
                             <span class="detail-icon">◷</span>
                             <div>
@@ -403,22 +625,30 @@
                     </div>
 
                     <div class="trainer-modal-plan">
-                        <h3 data-fa="برنامه تمرینی نمونه" data-en="SAMPLE TRAINING PLAN">برنامه تمرینی نمونه</h3>
-                        <p id="modalTrainerPlan"></p>
-                        <p class="trainer-plan-note"
-                           data-fa="این اطلاعات نمونه هستند و باید با اطلاعات واقعی باشگاه جایگزین شوند."
-                           data-en="These details are examples and should be replaced with the gym's real information.">
-                            این اطلاعات نمونه هستند و باید با اطلاعات واقعی باشگاه جایگزین شوند.
-                        </p>
+                        <h3 data-fa="برنامه تمرینی هفتگی" data-en="WEEKLY WORKOUT PLAN">برنامه تمرینی هفتگی</h3>
+                        <div id="modalTrainerPlan"></div>
                     </div>
+
+                    <div class="trainer-modal-plan trainer-nutrition-plan">
+                        <h3 data-fa="پیشنهاد تغذیه مربی" data-en="TRAINER NUTRITION GUIDE">پیشنهاد تغذیه مربی</h3>
+                        <div id="modalTrainerNutritionPlan"></div>
+                    </div>
+
+                    <p class="trainer-plan-note"
+                       data-fa="برنامه‌ها و اطلاعات این بخش نمونه آموزشی هستند و باید متناسب با شرایط هر فرد و با نظر متخصص تنظیم شوند."
+                       data-en="These plans are educational examples and should be adapted to individual needs with professional guidance.">
+                        برنامه‌ها و اطلاعات این بخش نمونه آموزشی هستند و باید متناسب با شرایط هر فرد و با نظر متخصص تنظیم شوند.
+                    </p>
 
                     <a href="#contact" class="btn trainer-modal-cta" id="trainerContactBtn"
                        data-fa="درخواست مشاوره" data-en="Request a Consultation">درخواست مشاوره</a>
                 </div>
             </section>
         </div>
+
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-top">
             <a href="#home" class="logo">
