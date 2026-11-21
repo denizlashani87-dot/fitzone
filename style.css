@@ -1,10 +1,14 @@
-/* FitZone — stylesheet */
+/* FitZone — upgraded stylesheet */
+
 :root {
     --green: #c6fa52;
     --dark: #10130f;
     --light: #f5f7f1;
     --muted: #777e72;
     --white: #fff;
+    --green-dark: #789b37;
+    --border: #e0e5d9;
+    --card-shadow: 0 12px 35px #10130f0d;
 }
 
 * {
@@ -191,6 +195,7 @@ img {
 }
 
 /* Hero */
+
 .hero {
     min-height: 680px;
     display: flex;
@@ -274,6 +279,7 @@ html[dir="ltr"] .hero {
 }
 
 /* About */
+
 .about-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -360,6 +366,7 @@ html[dir="ltr"] .hero {
 }
 
 /* Programs */
+
 .programs {
     background: #e9ede4;
 }
@@ -423,6 +430,7 @@ html[dir="ltr"] .hero {
 }
 
 /* Motivation */
+
 .motivation {
     padding: 90px max(22px, calc((100% - 1160px) / 2));
     color: #fff;
@@ -457,6 +465,7 @@ html[dir="rtl"] .motivation {
 }
 
 /* Trainer cards */
+
 .trainer-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -534,6 +543,7 @@ html[dir="rtl"] .trainer-card:after {
 }
 
 /* Pricing */
+
 .pricing {
     background: #ecefe7;
 }
@@ -613,6 +623,7 @@ html[dir="rtl"] .trainer-card:after {
 }
 
 /* Testimonials */
+
 .testimonial {
     background: #dfe8d2;
     padding: 75px 22px;
@@ -643,6 +654,7 @@ html[dir="rtl"] .trainer-card:after {
 }
 
 /* Contact */
+
 .contact-grid {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
@@ -738,57 +750,511 @@ html[dir="rtl"] .trainer-card:after {
     margin-top: 12px;
 }
 
-/* Footer */
-.footer {
-    background: var(--dark);
-    color: #fff;
-    padding: 32px max(22px, calc((100% - 1160px) / 2)) 18px;
+/* ==================================
+   NEW: Workout plans section
+================================== */
+
+.workout-plans {
+    background: #f5f7f1;
 }
 
-.footer-top,
-.footer-bottom {
+.workout-grid,
+.workout-plan-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.workout-card,
+.workout-plan-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 27px;
+    box-shadow: var(--card-shadow);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+.workout-card:hover,
+.workout-plan-card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 18px 40px #10130f16;
+}
+
+.workout-card:before,
+.workout-plan-card:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--green);
+}
+
+.workout-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    background: #eff7e4;
+    color: #638c2c;
+    font-size: 25px;
+    margin-bottom: 18px;
+}
+
+.workout-card h3,
+.workout-plan-card h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.workout-card p,
+.workout-plan-card > p {
+    color: var(--muted);
+    font-size: 12px;
+    margin-bottom: 18px;
+}
+
+.workout-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.workout-meta span {
+    background: #eff3e9;
+    color: #58664a;
+    padding: 5px 10px;
+    font-size: 10px;
+    font-weight: 800;
+}
+
+.workout-days {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+    margin: 18px 0;
+}
+
+.workout-days li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 20px;
+    gap: 12px;
+    padding: 10px 12px;
+    background: #f6f8f3;
+    border-inline-start: 3px solid var(--green);
+    font-size: 11px;
 }
 
-.footer-top {
-    padding-bottom: 25px;
+.workout-days strong {
+    color: #638c2c;
+    white-space: nowrap;
 }
 
-.footer-top p {
-    color: #b6bdb0;
+.workout-card .btn,
+.workout-plan-card .btn {
+    width: 100%;
+    margin-top: 12px;
+}
+
+/* ==================================
+   NEW: Nutrition section
+================================== */
+
+.nutrition {
+    background: #e9ede4;
+}
+
+.nutrition-grid,
+.nutrition-cards {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.nutrition-card {
+    background: #fff;
+    border: 1px solid #dfe5d7;
+    padding: 28px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.nutrition-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--card-shadow);
+}
+
+.nutrition-icon {
+    width: 55px;
+    height: 55px;
+    display: grid;
+    place-items: center;
+    background: #eff7e4;
+    color: #638c2c;
+    font-size: 25px;
+    margin-bottom: 18px;
+    border-radius: 50%;
+}
+
+.nutrition-card h3 {
+    font-size: 19px;
+    margin-bottom: 10px;
+}
+
+.nutrition-card p {
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 2;
+}
+
+.meal-list {
+    list-style: none;
+    display: grid;
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.meal-list li {
+    background: #f5f7f1;
+    padding: 12px;
+    border-inline-start: 3px solid var(--green);
     font-size: 12px;
 }
 
-.social-links {
-    display: flex;
-    gap: 9px;
+.meal-list strong {
+    display: block;
+    color: #648b2e;
+    margin-bottom: 3px;
 }
 
-.social-links a {
+.nutrition-note,
+.disclaimer,
+.demo-note {
+    margin-top: 25px;
+    padding: 17px 20px;
+    background: #f0f5e8;
+    border: 1px solid #dce8cc;
+    border-inline-start: 4px solid var(--green-dark);
+    color: #59634e;
+    font-size: 12px;
+    line-height: 2;
+}
+
+/* ==================================
+   NEW: Fitness calculator
+================================== */
+
+.fitness-calculator {
+    background: var(--dark);
+    color: #fff;
+}
+
+.fitness-calculator .section-heading h2 {
+    color: #fff;
+}
+
+.fitness-calculator .section-heading h2 span {
+    color: var(--green);
+}
+
+.fitness-calculator .section-label {
+    color: var(--green);
+}
+
+.fitness-calculator .section-heading > p {
+    color: #b8c0b2;
+}
+
+.calculator-grid {
+    display: grid;
+    grid-template-columns: 1fr 0.85fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.fitness-form,
+.calculator-form {
+    background: #1b2018;
+    border: 1px solid #343d2c;
+    padding: 30px;
+}
+
+.fitness-form label,
+.calculator-form label {
+    display: block;
+    color: #dce4d4;
+    font-size: 12px;
+    font-weight: 800;
+    margin: 15px 0 7px;
+}
+
+.fitness-form input,
+.fitness-form select,
+.calculator-form input,
+.calculator-form select {
+    width: 100%;
+    padding: 13px 14px;
+    background: #10140e;
+    color: #fff;
+    border: 1px solid #3b4532;
+    outline: none;
+    border-radius: 2px;
+    font-size: 13px;
+}
+
+.fitness-form input:focus,
+.fitness-form select:focus,
+.calculator-form input:focus,
+.calculator-form select:focus {
+    border-color: var(--green);
+}
+
+.fitness-form input::placeholder,
+.calculator-form input::placeholder {
+    color: #87917e;
+}
+
+.calculator-fields {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.fitness-form button,
+.calculator-form button {
+    width: 100%;
+    margin-top: 24px;
+}
+
+.fitness-result,
+.calculator-result {
+    min-height: 250px;
+    background: #e9ede4;
+    color: var(--dark);
+    padding: 30px;
+    border-top: 4px solid var(--green);
+}
+
+.fitness-result h3,
+.calculator-result h3 {
+    font-size: 21px;
+    margin-bottom: 12px;
+}
+
+.fitness-result p,
+.calculator-result p {
+    color: #68705f;
+    font-size: 13px;
+}
+
+.result-placeholder {
+    min-height: 150px;
     display: grid;
     place-items: center;
-    width: 35px;
-    height: 35px;
-    color: var(--green);
-    border: 1px solid #454b3e;
-    font: bold 11px Arial, sans-serif;
+    text-align: center;
+    color: #777e72;
+    font-size: 13px;
 }
 
-.footer-bottom {
-    border-top: 1px solid #30352c;
-    padding-top: 15px;
+.result-number {
+    font-size: 34px;
+    font-weight: 900;
+    color: #62892c;
+    direction: ltr;
+}
+
+.result-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.result-item {
+    background: #fff;
+    padding: 15px;
+    border: 1px solid #dfe5d7;
+}
+
+.result-item small,
+.result-item strong {
+    display: block;
+}
+
+.result-item small {
+    color: var(--muted);
     font-size: 10px;
-    color: #a4ac9c;
 }
 
-.footer-bottom a {
-    color: var(--green);
+.result-item strong {
+    color: #62892c;
+    font-size: 21px;
+    direction: ltr;
 }
 
-/* Trainer profile modal */
+.calculator-note {
+    color: #b9c1b2;
+    font-size: 11px;
+    margin-top: 18px;
+    line-height: 2;
+}
+
+/* ==================================
+   NEW: Progress dashboard
+================================== */
+
+.progress {
+    background: #f5f7f1;
+}
+
+.progress-dashboard {
+    background: #fff;
+    border: 1px solid var(--border);
+    padding: 30px;
+    box-shadow: var(--card-shadow);
+}
+
+.progress-stats,
+.progress-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 16px;
+}
+
+.progress-stat {
+    background: #f4f7ef;
+    border: 1px solid #e5ebdc;
+    padding: 22px 17px;
+}
+
+.progress-stat small {
+    display: block;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.progress-stat strong {
+    display: block;
+    color: #648b2e;
+    font-size: 27px;
+    font-weight: 900;
+    margin: 5px 0;
+    direction: ltr;
+}
+
+.progress-stat span {
+    color: #858d7c;
+    font-size: 10px;
+}
+
+.progress-details {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    margin-top: 35px;
+}
+
+.progress-details h3 {
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.progress-item {
+    margin-bottom: 20px;
+}
+
+.progress-item-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.progress-item-header span:last-child {
+    color: #648b2e;
+    direction: ltr;
+}
+
+.progress-track {
+    width: 100%;
+    height: 10px;
+    background: #e8ede1;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    width: var(--progress, 50%);
+    background: var(--green-dark);
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+.progress-chart {
+    min-height: 220px;
+    display: flex;
+    align-items: end;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 20px 15px 0;
+    background: #f7f9f4;
+    border: 1px solid #e6ebdf;
+}
+
+.progress-chart-column {
+    flex: 1;
+    max-width: 55px;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    gap: 8px;
+}
+
+.progress-chart-bar {
+    width: 100%;
+    height: var(--bar-height, 50%);
+    background: #b5d77b;
+    transition: height 0.4s;
+    border-radius: 4px 4px 0 0;
+}
+
+.progress-chart-column:nth-child(2n) .progress-chart-bar {
+    background: var(--green-dark);
+}
+
+.progress-chart-column span {
+    color: #727b68;
+    font-size: 10px;
+}
+
+.progress-chart-column strong {
+    color: #638b2e;
+    font-size: 11px;
+}
+
+.progress-demo-label {
+    display: inline-block;
+    background: #eff6e5;
+    color: #668d2b;
+    padding: 5px 10px;
+    font-size: 10px;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+/* ==================================
+   Trainer modal
+================================== */
+
 .trainer-modal {
     position: fixed;
     inset: 0;
@@ -987,6 +1453,39 @@ html[dir="rtl"] .trainer-card:after {
     text-align: center;
 }
 
+/* Trainer nutrition plan */
+
+.trainer-modal-nutrition,
+#modalTrainerNutritionPlan {
+    padding: 18px;
+    background: #eff4e8;
+    border: 1px solid #dce8cc;
+    border-inline-start: 4px solid var(--green-dark);
+    margin-bottom: 22px;
+}
+
+.trainer-modal-nutrition h3,
+#modalTrainerNutritionPlan h3 {
+    color: #62872d;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.trainer-modal-nutrition p,
+#modalTrainerNutritionPlan p {
+    color: #59634e;
+    font-size: 12px;
+    line-height: 2;
+}
+
+.trainer-modal-nutrition small,
+#modalTrainerNutritionPlan small {
+    display: block;
+    color: #7b8470;
+    font-size: 10px;
+    margin-top: 10px;
+}
+
 html[dir="ltr"] .trainer-modal-close {
     right: auto;
     left: 12px;
@@ -996,7 +1495,78 @@ html[dir="ltr"] .trainer-modal-content {
     text-align: left;
 }
 
-/* Responsive */
+/* Footer */
+
+.footer {
+    background: var(--dark);
+    color: #fff;
+    padding: 32px max(22px, calc((100% - 1160px) / 2)) 18px;
+}
+
+.footer-top,
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-top {
+    padding-bottom: 25px;
+}
+
+.footer-top p {
+    color: #b6bdb0;
+    font-size: 12px;
+}
+
+.social-links {
+    display: flex;
+    gap: 9px;
+}
+
+.social-links a {
+    display: grid;
+    place-items: center;
+    width: 35px;
+    height: 35px;
+    color: var(--green);
+    border: 1px solid #454b3e;
+    font: bold 11px Arial, sans-serif;
+}
+
+.footer-bottom {
+    border-top: 1px solid #30352c;
+    padding-top: 15px;
+    font-size: 10px;
+    color: #a4ac9c;
+}
+
+.footer-bottom a {
+    color: var(--green);
+}
+
+/* ==================================
+   Responsive design
+================================== */
+
+@media (max-width: 1100px) {
+    .header nav {
+        gap: 12px;
+    }
+
+    .header nav a {
+        font-size: 11px;
+    }
+
+    .workout-grid,
+    .workout-plan-grid,
+    .nutrition-grid,
+    .nutrition-cards {
+        gap: 15px;
+    }
+}
+
 @media (max-width: 950px) {
     .header {
         gap: 12px;
@@ -1021,6 +1591,22 @@ html[dir="ltr"] .trainer-modal-content {
 
     .program-card {
         height: 360px;
+    }
+
+    .workout-grid,
+    .workout-plan-grid,
+    .nutrition-grid,
+    .nutrition-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .progress-stats,
+    .progress-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .calculator-grid {
+        grid-template-columns: 1fr;
     }
 }
 
@@ -1171,6 +1757,35 @@ html[dir="ltr"] .trainer-modal-content {
         align-items: flex-start;
         flex-direction: column;
     }
+
+    .workout-grid,
+    .workout-plan-grid,
+    .nutrition-grid,
+    .nutrition-cards {
+        grid-template-columns: 1fr;
+    }
+
+    .workout-card,
+    .workout-plan-card,
+    .nutrition-card {
+        padding: 23px;
+    }
+
+    .progress-dashboard {
+        padding: 18px;
+    }
+
+    .progress-details {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .fitness-form,
+    .calculator-form,
+    .fitness-result,
+    .calculator-result {
+        padding: 22px 17px;
+    }
 }
 
 @media (max-width: 650px) {
@@ -1202,6 +1817,53 @@ html[dir="ltr"] .trainer-modal-content {
 
     .trainer-detail-item {
         padding: 10px 7px;
+    }
+
+    .calculator-fields {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
+    .progress-stats,
+    .progress-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .progress-stat {
+        padding: 15px 12px;
+    }
+
+    .progress-stat strong {
+        font-size: 22px;
+    }
+
+    .result-items {
+        grid-template-columns: 1fr;
+    }
+
+    .progress-chart {
+        gap: 8px;
+        padding-inline: 8px;
+    }
+
+    .progress-chart-column {
+        max-width: 42px;
+    }
+}
+
+@media (max-width: 380px) {
+    .progress-stats,
+    .progress-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .trainer-modal-details {
+        grid-template-columns: 1fr;
+    }
+
+    .hero h1 {
+        font-size: 40px;
     }
 }
 
