@@ -1,9 +1,9 @@
-// ==========================================
-// FitZone — Complete JavaScript
-// Bilingual website, trainer profiles,
-// fitness calculator and demo interactions
-// ==========================================
 
+/* ==========================================
+   FitZone — Complete JavaScript
+   Bilingual website + Trainers + Calculator
+   + Progress Dashboard
+========================================== */
 
 // ------------------------------------------
 // Main elements
@@ -33,14 +33,12 @@ function changeLanguage(language) {
 
     document.body.classList.toggle("en", isEnglish);
 
-    // Change bilingual text
     document.querySelectorAll("[data-fa][data-en]").forEach(element => {
         element.innerHTML = isEnglish
             ? element.dataset.en
             : element.dataset.fa;
     });
 
-    // Change input placeholders
     document.querySelectorAll(
         "[data-placeholder-fa][data-placeholder-en]"
     ).forEach(element => {
@@ -49,17 +47,14 @@ function changeLanguage(language) {
             : element.dataset.placeholderFa;
     });
 
-    // Change language button
     if (langBtn) {
         langBtn.textContent = isEnglish ? "FA" : "EN";
     }
 
-    // Change page title
     document.title = isEnglish
         ? "FitZone | Fitness Club"
         : "FitZone | باشگاه تناسب اندام";
 
-    // Close mobile navigation
     if (nav) {
         nav.classList.remove("open");
     }
@@ -68,24 +63,23 @@ function changeLanguage(language) {
         menuBtn.setAttribute("aria-expanded", "false");
     }
 
-    // Update trainer profile if modal is open
+    // Refresh open trainer profile
     if (activeTrainerCard && activeTrainerIndex !== -1) {
         fillTrainerProfile(activeTrainerCard, activeTrainerIndex);
     }
 
-    // Refresh calculator placeholder if no result exists
-    const fitnessResult = document.getElementById("fitnessResult");
-
+    // Refresh calculator placeholder
     if (
         fitnessResult &&
         fitnessResult.dataset.hasResult !== "true"
     ) {
         showCalculatorPlaceholder();
     }
+
+    // Refresh progress history language
+    renderProgressHistory();
 }
 
-
-// Language button
 if (langBtn) {
     langBtn.addEventListener("click", () => {
         changeLanguage(currentLanguage === "fa" ? "en" : "fa");
@@ -117,7 +111,7 @@ if (menuBtn && nav) {
 
 
 // ------------------------------------------
-// Automatic footer year
+// Footer year
 // ------------------------------------------
 
 const year = document.getElementById("year");
@@ -127,9 +121,9 @@ if (year) {
 }
 
 
-// ------------------------------------------
-// Contact form demonstration
-// ------------------------------------------
+// ==========================================
+// Contact form
+// ==========================================
 
 if (contactForm) {
     contactForm.addEventListener("submit", event => {
@@ -155,10 +149,10 @@ if (contactForm) {
 
         if (formMessage) {
             formMessage.textContent = currentLanguage === "fa"
-                ? "اطلاعات وارد شد؛ برای دریافت واقعی درخواست‌ها باید فرم به سرور یا سرویس ایمیل متصل شود."
-                : "Details entered. Connect this form to a server or email service to receive submissions.";
+                ? "اطلاعات وارد شد. برای دریافت واقعی درخواست‌ها باید فرم به سرویس ارسال اطلاعات متصل شود."
+                : "Details entered. Connect this form to a submission service to receive requests.";
 
-            formMessage.style.color = "#5d812a";
+            formMessage.style.color = "#8fbd38";
         }
 
         contactForm.reset();
@@ -171,24 +165,13 @@ if (contactForm) {
 // ==========================================
 
 const trainerModal = document.getElementById("trainerModal");
-
-const trainerModalOverlay = document.getElementById(
-    "trainerModalOverlay"
-);
-
-const closeTrainerModal = document.getElementById(
-    "closeTrainerModal"
-);
-
-const trainerContactBtn = document.getElementById(
-    "trainerContactBtn"
-);
+const trainerModalOverlay = document.getElementById("trainerModalOverlay");
+const closeTrainerModal = document.getElementById("closeTrainerModal");
+const trainerContactBtn = document.getElementById("trainerContactBtn");
 
 let activeTrainerCard = null;
 let activeTrainerIndex = -1;
 
-
-// Trainer information
 const trainerProfiles = [
 
     {
@@ -306,9 +289,7 @@ const trainerProfiles = [
 function fillTrainerProfile(card, index) {
     const profile = trainerProfiles[index];
 
-    if (!profile || !card) {
-        return;
-    }
+    if (!profile || !card) return;
 
     const english = currentLanguage === "en";
 
@@ -318,6 +299,7 @@ function fillTrainerProfile(card, index) {
     const trainerName = document.getElementById("modalTrainerName");
     const trainerRole = document.getElementById("modalTrainerRole");
     const trainerBio = document.getElementById("modalTrainerBio");
+
     const trainerExperience = document.getElementById(
         "modalTrainerExperience"
     );
@@ -341,15 +323,11 @@ function fillTrainerProfile(card, index) {
     }
 
     if (trainerRole) {
-        trainerRole.textContent = english
-            ? profile.roleEn
-            : profile.roleFa;
+        trainerRole.textContent = english ? profile.roleEn : profile.roleFa;
     }
 
     if (trainerBio) {
-        trainerBio.textContent = english
-            ? profile.bioEn
-            : profile.bioFa;
+        trainerBio.textContent = english ? profile.bioEn : profile.bioFa;
     }
 
     if (trainerExperience) {
@@ -365,9 +343,13 @@ function fillTrainerProfile(card, index) {
     }
 
     if (trainerPlan) {
-        trainerPlan.textContent = english
-            ? profile.planEn
-            : profile.planFa;
+        const weeklySchedule = english
+            ? profile.weeklyScheduleEn
+            : profile.weeklyScheduleFa;
+
+        const basicPlan = english ? profile.planEn : profile.planFa;
+
+        trainerPlan.textContent = basicPlan + "\n\n" + weeklySchedule;
     }
 
     if (trainerNutrition) {
@@ -378,22 +360,17 @@ function fillTrainerProfile(card, index) {
 
     if (image && trainerImage) {
         trainerImage.src = image.src;
-
-        trainerImage.alt = title
-            ? title.textContent.trim()
-            : "Trainer";
+        trainerImage.alt = title ? title.textContent.trim() : "Trainer";
     }
 }
 
 
 // ------------------------------------------
-// Open trainer modal
+// Open and close trainer modal
 // ------------------------------------------
 
 function openTrainerProfile(card, index) {
-    if (!trainerModal || !trainerProfiles[index]) {
-        return;
-    }
+    if (!trainerModal || !trainerProfiles[index]) return;
 
     activeTrainerCard = card;
     activeTrainerIndex = index;
@@ -401,7 +378,6 @@ function openTrainerProfile(card, index) {
     fillTrainerProfile(card, index);
 
     trainerModal.classList.add("active");
-
     trainerModal.setAttribute("aria-hidden", "false");
 
     document.body.classList.add("modal-open");
@@ -411,18 +387,10 @@ function openTrainerProfile(card, index) {
     }
 }
 
-
-// ------------------------------------------
-// Close trainer modal
-// ------------------------------------------
-
 function hideTrainerProfile() {
-    if (!trainerModal) {
-        return;
-    }
+    if (!trainerModal) return;
 
     trainerModal.classList.remove("active");
-
     trainerModal.setAttribute("aria-hidden", "true");
 
     document.body.classList.remove("modal-open");
@@ -433,62 +401,34 @@ function hideTrainerProfile() {
 }
 
 
-// ------------------------------------------
-// Trainer cards interactions
-// ------------------------------------------
-
+// Trainer card interactions
 document.querySelectorAll(".trainer-card").forEach((card, index) => {
 
     card.setAttribute("tabindex", "0");
-
     card.setAttribute("role", "button");
-
-    card.setAttribute(
-        "aria-label",
-        currentLanguage === "fa"
-            ? "نمایش پروفایل مربی"
-            : "View trainer profile"
-    );
 
     card.addEventListener("click", () => {
         openTrainerProfile(card, index);
     });
 
     card.addEventListener("keydown", event => {
-
         if (event.key === "Enter" || event.key === " ") {
-
             event.preventDefault();
-
             openTrainerProfile(card, index);
         }
-
     });
 
 });
 
-
-// Close button
 if (closeTrainerModal) {
-    closeTrainerModal.addEventListener(
-        "click",
-        hideTrainerProfile
-    );
+    closeTrainerModal.addEventListener("click", hideTrainerProfile);
 }
 
-
-// Close by clicking overlay
 if (trainerModalOverlay) {
-    trainerModalOverlay.addEventListener(
-        "click",
-        hideTrainerProfile
-    );
+    trainerModalOverlay.addEventListener("click", hideTrainerProfile);
 }
 
-
-// Close with Escape
 document.addEventListener("keydown", event => {
-
     if (
         event.key === "Escape" &&
         trainerModal &&
@@ -496,56 +436,37 @@ document.addEventListener("keydown", event => {
     ) {
         hideTrainerProfile();
     }
-
 });
 
-
-// Consultation button
 if (trainerContactBtn) {
     trainerContactBtn.addEventListener("click", () => {
-
         hideTrainerProfile();
 
         const contactSection = document.getElementById("contact");
 
         if (contactSection) {
-            contactSection.scrollIntoView({
-                behavior: "smooth"
-            });
+            contactSection.scrollIntoView({ behavior: "smooth" });
         }
-
     });
 }
 
 
 // ==========================================
 // Fitness calculator
-// BMI + BMR + Estimated daily calories
+// Uses the exact IDs in the HTML file
 // ==========================================
 
 const fitnessForm = document.getElementById("fitnessForm");
-
 const fitnessResult = document.getElementById("fitnessResult");
 
-const heightInput = document.getElementById("heightInput");
+const ageInput = document.getElementById("fitnessAge");
+const genderInput = document.getElementById("fitnessGender");
+const weightInput = document.getElementById("fitnessWeight");
+const heightInput = document.getElementById("fitnessHeight");
+const activityInput = document.getElementById("fitnessActivity");
 
-const weightInput = document.getElementById("weightInput");
-
-const ageInput = document.getElementById("ageInput");
-
-const genderInput = document.getElementById("genderInput");
-
-const activityInput = document.getElementById("activityInput");
-
-const goalInput = document.getElementById("goalInput");
-
-
-// Show initial calculator message
 function showCalculatorPlaceholder() {
-
-    if (!fitnessResult) {
-        return;
-    }
+    if (!fitnessResult) return;
 
     fitnessResult.dataset.hasResult = "false";
 
@@ -569,15 +490,14 @@ function showCalculatorPlaceholder() {
 }
 
 
-// Activity multipliers
+// Activity multiplier
 function getActivityMultiplier(activity) {
-
     const activityLevels = {
-        low: 1.2,
-        light: 1.375,
-        moderate: 1.55,
-        high: 1.725,
-        veryHigh: 1.9
+        "1.2": 1.2,
+        "1.375": 1.375,
+        "1.55": 1.55,
+        "1.725": 1.725,
+        "1.9": 1.9
     };
 
     return activityLevels[activity] || 1.2;
@@ -586,129 +506,87 @@ function getActivityMultiplier(activity) {
 
 // BMI category
 function getBMICategory(bmi) {
-
     if (bmi < 18.5) {
-        return currentLanguage === "fa"
-            ? "کمبود وزن"
-            : "Underweight";
+        return currentLanguage === "fa" ? "کمبود وزن" : "Underweight";
     }
 
     if (bmi < 25) {
-        return currentLanguage === "fa"
-            ? "محدوده طبیعی"
-            : "Normal range";
+        return currentLanguage === "fa" ? "محدوده طبیعی" : "Normal range";
     }
 
     if (bmi < 30) {
-        return currentLanguage === "fa"
-            ? "اضافه وزن"
-            : "Overweight";
+        return currentLanguage === "fa" ? "اضافه وزن" : "Overweight";
     }
 
-    return currentLanguage === "fa"
-        ? "چاقی"
-        : "Obesity";
+    return currentLanguage === "fa" ? "چاقی" : "Obesity";
 }
 
 
-// Calculate fitness results
+// Calculator submit
 if (fitnessForm) {
-
     fitnessForm.addEventListener("submit", event => {
-
         event.preventDefault();
 
         if (
-            !heightInput ||
-            !weightInput ||
             !ageInput ||
             !genderInput ||
+            !weightInput ||
+            !heightInput ||
             !activityInput ||
-            !goalInput ||
             !fitnessResult
         ) {
             return;
         }
 
+        const age = Number(ageInput.value);
+        const weight = Number(weightInput.value);
         const height = Number(heightInput.value);
 
-        const weight = Number(weightInput.value);
-
-        const age = Number(ageInput.value);
-
         const gender = genderInput.value;
-
         const activity = activityInput.value;
 
-        const goal = goalInput.value;
-
-        // Validate inputs
         if (
-            !Number.isFinite(height) ||
-            !Number.isFinite(weight) ||
             !Number.isFinite(age) ||
-            height < 100 ||
-            height > 250 ||
-            weight < 25 ||
-            weight > 300 ||
+            !Number.isFinite(weight) ||
+            !Number.isFinite(height) ||
             age < 15 ||
-            age > 100
+            age > 100 ||
+            weight < 20 ||
+            weight > 300 ||
+            height < 100 ||
+            height > 250
         ) {
-
             fitnessResult.dataset.hasResult = "true";
 
             fitnessResult.innerHTML = currentLanguage === "fa"
                 ? `
                     <h3>اطلاعات نامعتبر است</h3>
-                    <p>لطفاً قد، وزن و سن را بررسی و دوباره وارد کنید.</p>
+                    <p>لطفاً سن، وزن و قد را بررسی کنید.</p>
                 `
                 : `
                     <h3>Invalid information</h3>
-                    <p>Please check your height, weight, and age.</p>
+                    <p>Please check your age, weight and height.</p>
                 `;
 
             return;
         }
 
-        // BMI calculation
+        // BMI
         const heightInMeters = height / 100;
-
         const bmi = weight / (heightInMeters * heightInMeters);
 
-        // Mifflin-St Jeor BMR estimation
+        // BMR: Mifflin-St Jeor equation
         let bmr;
 
         if (gender === "male") {
-
-            bmr = (10 * weight) +
-                (6.25 * height) -
-                (5 * age) +
-                5;
-
+            bmr = (10 * weight) + (6.25 * height) - (5 * age) + 5;
         } else {
-
-            bmr = (10 * weight) +
-                (6.25 * height) -
-                (5 * age) -
-                161;
-
+            bmr = (10 * weight) + (6.25 * height) - (5 * age) - 161;
         }
 
         // Estimated daily calories
         const multiplier = getActivityMultiplier(activity);
-
-        let calories = bmr * multiplier;
-
-        // Goal adjustment
-        if (goal === "lose") {
-            calories -= 300;
-        } else if (goal === "gain") {
-            calories += 250;
-        }
-
-        calories = Math.round(calories);
-
-        const roundedBMI = bmi.toFixed(1);
+        const calories = Math.round(bmr * multiplier);
 
         const bmiCategory = getBMICategory(bmi);
 
@@ -734,7 +612,7 @@ if (fitnessForm) {
 
         const note = currentLanguage === "fa"
             ? "این نتایج تخمینی و آموزشی هستند و جایگزین مشاوره پزشک یا متخصص تغذیه نیستند."
-            : "These are educational estimates and are not a substitute for medical or professional nutrition advice.";
+            : "These are educational estimates and are not a substitute for professional medical or nutrition advice.";
 
         fitnessResult.dataset.hasResult = "true";
 
@@ -745,97 +623,246 @@ if (fitnessForm) {
 
                 <div class="result-item">
                     <small>${bmiLabel}</small>
-                    <strong>${roundedBMI}</strong>
+                    <strong>${bmi.toFixed(1)}</strong>
                 </div>
 
                 <div class="result-item">
                     <small>${categoryLabel}</small>
-                    <strong style="font-size:16px;direction:rtl">
-                        ${bmiCategory}
-                    </strong>
+                    <strong>${bmiCategory}</strong>
                 </div>
 
                 <div class="result-item">
                     <small>${calorieLabel}</small>
-                    <strong>${calories}</strong>
+                    <strong>${calories.toLocaleString(
+                        currentLanguage === "fa" ? "fa-IR" : "en-US"
+                    )}</strong>
                     <small>${calorieUnit}</small>
                 </div>
 
             </div>
 
-            <p class="calculator-note" style="color:#68705f;margin-top:18px">
-                ${note}
-            </p>
+            <p class="calculator-note">${note}</p>
         `;
-
     });
-
 }
 
-
-// Initial calculator placeholder
 showCalculatorPlaceholder();
 
 
 // ==========================================
 // Progress dashboard
-// Demo data and progress bars
+// Saves data in the current browser
 // ==========================================
 
-// The dashboard intentionally uses sample data.
-// It does not save real user activity.
+const progressForm = document.getElementById("progressForm");
+const progressWeightInput = document.getElementById("progressWeight");
+const progressGoalInput = document.getElementById("progressGoal");
 
-const progressBars = document.querySelectorAll(".progress-fill");
+const latestWeightElement = document.getElementById("latestWeight");
+const targetWeightElement = document.getElementById("targetWeight");
+const progressCountElement = document.getElementById("progressCount");
 
-progressBars.forEach(bar => {
+const progressHistory = document.getElementById("progressHistory");
+const clearProgressButton = document.getElementById("clearProgress");
 
-    const progressValue = bar.dataset.progress;
+const PROGRESS_STORAGE_KEY = "fitZoneProgressData";
 
-    if (progressValue) {
+let progressData = [];
 
-        const value = Math.min(
-            100,
-            Math.max(0, Number(progressValue))
+
+// Load saved progress
+function loadProgressData() {
+    try {
+        const savedData = localStorage.getItem(PROGRESS_STORAGE_KEY);
+
+        progressData = savedData ? JSON.parse(savedData) : [];
+
+        if (!Array.isArray(progressData)) {
+            progressData = [];
+        }
+    } catch (error) {
+        progressData = [];
+    }
+}
+
+
+// Save progress
+function saveProgressData() {
+    try {
+        localStorage.setItem(
+            PROGRESS_STORAGE_KEY,
+            JSON.stringify(progressData)
         );
 
-        bar.style.setProperty(
-            "--progress",
-            value + "%"
-        );
+        return true;
+    } catch (error) {
+        return false;
+    }
+}
 
+
+// Format weight
+function formatWeight(value) {
+    return Number(value).toLocaleString(
+        currentLanguage === "fa" ? "fa-IR" : "en-US",
+        {
+            maximumFractionDigits: 1
+        }
+    );
+}
+
+
+// Render progress history
+function renderProgressHistory() {
+    if (!progressHistory) return;
+
+    if (progressData.length === 0) {
+        progressHistory.innerHTML = currentLanguage === "fa"
+            ? "<p>هنوز اطلاعاتی ثبت نشده است.</p>"
+            : "<p>No progress has been recorded yet.</p>";
+
+        if (latestWeightElement) latestWeightElement.textContent = "—";
+        if (targetWeightElement) targetWeightElement.textContent = "—";
+        if (progressCountElement) progressCountElement.textContent = "0";
+
+        return;
     }
 
+    const latest = progressData[progressData.length - 1];
+
+    if (latestWeightElement) {
+        latestWeightElement.textContent = formatWeight(latest.weight);
+    }
+
+    if (targetWeightElement) {
+        targetWeightElement.textContent = latest.goal
+            ? formatWeight(latest.goal)
+            : "—";
+    }
+
+    if (progressCountElement) {
+        progressCountElement.textContent = formatWeight(progressData.length);
+    }
+
+    progressHistory.innerHTML = "";
+
+    [...progressData].reverse().forEach(entry => {
+        const item = document.createElement("div");
+        item.className = "progress-history-item";
+
+        const date = document.createElement("span");
+        const weight = document.createElement("strong");
+
+        date.textContent = new Date(entry.date).toLocaleDateString(
+            currentLanguage === "fa" ? "fa-IR" : "en-US"
+        );
+
+        weight.textContent = currentLanguage === "fa"
+            ? `${formatWeight(entry.weight)} کیلوگرم`
+            : `${formatWeight(entry.weight)} kg`;
+
+        item.appendChild(date);
+        item.appendChild(weight);
+
+        progressHistory.appendChild(item);
+    });
+}
+
+
+// Submit progress form
+if (progressForm) {
+    progressForm.addEventListener("submit", event => {
+        event.preventDefault();
+
+        const weight = Number(progressWeightInput?.value);
+        const goal = Number(progressGoalInput?.value);
+
+        if (
+            !Number.isFinite(weight) ||
+            !Number.isFinite(goal) ||
+            weight < 20 ||
+            weight > 300 ||
+            goal < 20 ||
+            goal > 300
+        ) {
+            alert(
+                currentLanguage === "fa"
+                    ? "لطفاً وزن و وزن هدف را به‌درستی وارد کنید."
+                    : "Please enter valid current and target weights."
+            );
+
+            return;
+        }
+
+        progressData.push({
+            weight: weight,
+            goal: goal,
+            date: new Date().toISOString()
+        });
+
+        if (!saveProgressData()) {
+            alert(
+                currentLanguage === "fa"
+                    ? "ذخیره اطلاعات در این مرورگر امکان‌پذیر نیست."
+                    : "Unable to save data in this browser."
+            );
+
+            progressData.pop();
+            return;
+        }
+
+        renderProgressHistory();
+        progressForm.reset();
+    });
+}
+
+
+// Clear progress
+if (clearProgressButton) {
+    clearProgressButton.addEventListener("click", () => {
+        const confirmed = confirm(
+            currentLanguage === "fa"
+                ? "آیا مطمئن هستید که می‌خواهید تمام اطلاعات پیشرفت پاک شود؟"
+                : "Are you sure you want to clear all progress data?"
+        );
+
+        if (!confirmed) return;
+
+        progressData = [];
+        saveProgressData();
+        renderProgressHistory();
+    });
+}
+
+
+// Load and display saved data
+loadProgressData();
+renderProgressHistory();
+
+
+// ==========================================
+// Existing progress bars
+// ==========================================
+
+document.querySelectorAll(".progress-fill").forEach(bar => {
+    const progressValue = Number(bar.dataset.progress);
+
+    if (Number.isFinite(progressValue)) {
+        const value = Math.min(100, Math.max(0, progressValue));
+
+        bar.style.setProperty("--progress", value + "%");
+    }
 });
 
-
-// Progress chart bars
 document.querySelectorAll(".progress-chart-bar").forEach(bar => {
+    const barValue = Number(bar.dataset.height);
 
-    const barValue = bar.dataset.height;
+    if (Number.isFinite(barValue)) {
+        const value = Math.min(100, Math.max(0, barValue));
 
-    if (barValue) {
-
-        const value = Math.min(
-            100,
-            Math.max(0, Number(barValue))
-        );
-
-        bar.style.setProperty(
-            "--bar-height",
-            value + "%"
-        );
-
+        bar.style.setProperty("--bar-height", value + "%");
     }
-
 });
-
-
-// ==========================================
-// Workout and nutrition sections
-// ==========================================
-
-// These sections contain sample information.
-// Their content is provided by the HTML file.
 
 
 // ==========================================
